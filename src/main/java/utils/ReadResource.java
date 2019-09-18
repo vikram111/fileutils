@@ -22,16 +22,5 @@ public class ReadResource {
     public static void main(String[] args) {
         ReadResource readResource = new ReadResource();
         readResource.loadProps();
-
-        Properties properties = new Properties();
-        try(InputStream inputStream = ReadResource.class.getResourceAsStream("application.properties")){
-            if(inputStream != null){
-                properties.load(inputStream);
-            }
-        }catch (IOException e){
-            System.out.println(e.getMessage());
-        }
-
-        System.out.println("Name : "+properties.getProperty("name"));
     }
 }
